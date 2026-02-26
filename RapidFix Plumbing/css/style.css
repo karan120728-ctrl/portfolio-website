@@ -1,0 +1,424 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+    display: inline-block;
+    background: #0077ff;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #005fcc;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #0077ff;
+    color: #0077ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #0077ff;
+    color: #fff;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo h2 {
+    color: #0077ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0077ff;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(to right, #eef4ff, #ffffff);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+}
+
+/* ================= SECTIONS ================= */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* ================= SERVICES ================= */
+.services {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #f4f7ff;
+    padding: 25px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= ABOUT ================= */
+.about {
+    padding: 70px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text ul {
+    margin-top: 20px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+    padding: 70px 0;
+    background: #fff;
+}
+
+.testimonial {
+    display: none;
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+    padding: 70px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content,
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px;
+        gap: 25px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: 0.4s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+}
+
+/* ================= EXTRA RESPONSIVE FIXES ================= */
+
+/* Make images fully responsive */
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Improve button appearance */
+button.btn-primary {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Add subtle shadow to sections */
+.services,
+.testimonials,
+.contact {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Add hover effect to service cards */
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 119, 255, 0.08);
+    transition: 0.4s ease;
+}
+
+.service-card:hover::before {
+    left: 0;
+}
+
+/* Improve form styling */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0077ff;
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.3);
+}
+
+/* Better submit button look */
+form button {
+    width: 100%;
+}
+
+/* Mobile improvements */
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+/* Hero animation */
+.hero-text {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sticky Call Button */
+.sticky-call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0077ff;
+    color: #fff;
+    padding: 15px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 119, 255, 0.4);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.sticky-call:hover {
+    transform: scale(1.1);
+}
